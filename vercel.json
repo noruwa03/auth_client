@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/proxy/:path*",
-      "destination": "http://localhost:8000/:path"
+      "source": "/(.*)",
+      "destination": "http://localhost:8000"
     },
     {
       "source": "/(.*)",
