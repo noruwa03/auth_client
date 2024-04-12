@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "'http://localhost:8000"
+      "source": "/api/(.*)",
+      "destination": "https://auth-server-3u34.onrender.com/$1"
     },
     {
       "source": "/(.*)",

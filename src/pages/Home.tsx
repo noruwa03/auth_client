@@ -12,7 +12,7 @@ const Home = () => {
   const navigateUser = useNavigate();
 
   const toggleResetPassword = () => {
-    setResetPassword((prev) => !prev);
+    setResetPassword((prev: any) => !prev);
   };
 
   axios.defaults.withCredentials = true;
@@ -29,12 +29,21 @@ const Home = () => {
     }
   };
 
+  const getTest = async () => {
+    const res = await fetch("/api/v1/", {
+      method: "get",
+    });
+    const data = await res.json();
+    console.log(data);
+  };
+
   useEffect(() => {
     const cookies = new Cookies();
     const userData = cookies.get("userData");
     const check = userData !== undefined || null ? userData.userInfo : null;
     setUser(check);
     console.log("User Data:", userData);
+    getTest();
   }, []);
 
   return (
