@@ -24,7 +24,7 @@ const ResetPassword = () => {
 
   const onChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.target;
-    setInput((prev) => ({ ...prev, [name]: value }));
+    setInput((prev: any) => ({ ...prev, [name]: value }));
   };
 
   axios.defaults.withCredentials = true;

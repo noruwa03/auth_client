@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, FormEvent, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const ForgotPassword = () => {
 
   const onChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.target;
-    setInput((prev) => ({ ...prev, [name]: value }));
+    setInput((prev: any) => ({ ...prev, [name]: value }));
   };
 
   const submitHandler = (evt: FormEvent<HTMLFormElement>): void => {
