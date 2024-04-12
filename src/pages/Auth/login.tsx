@@ -30,12 +30,12 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setIsPasswordVisible((prevState) => !prevState);
+    setIsPasswordVisible((prevState: any) => !prevState);
   };
 
   const onChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.target;
-    setInput((prev) => ({ ...prev, [name]: value }));
+    setInput((prev:any) => ({ ...prev, [name]: value }));
   };
 
   const submitHandler = async (evt: FormEvent<HTMLFormElement>) => {

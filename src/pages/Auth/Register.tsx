@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, FormEvent, ChangeEvent, Fragment } from "react";
 import Google from "../../assets/icons/google.svg";
-import Twitter from "../../assets/icons/twitter.svg";
+import Twitter from "../../assets/icons/twitter.svg"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -23,12 +23,12 @@ const Register = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setIsPasswordVisible((prevState) => !prevState);
+    setIsPasswordVisible((prevState: any) => !prevState);
   };
 
   const onChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.target;
-    setInput((prev) => ({ ...prev, [name]: value }));
+    setInput((prev: any) => ({ ...prev, [name]: value }));
   };
 
   const navigateUser = useNavigate();
@@ -44,7 +44,7 @@ const Register = () => {
     const { email, password } = payload;
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/signup", {
+      const response = await axios.post("/api/v1/signup", {
         email,
         password,
       });
@@ -70,20 +70,20 @@ const Register = () => {
   };
 
   const googleLogin = async () => {
-    const res = await fetch("http://localhost:8000/api/v1/google", {
+    const res = await fetch("/api/v1/google", {
       method: "post",
     });
     const data = await res.json();
     await navigate(data.url);
   };
 
-  const twitterLogin = async () => {
-    const res = await fetch("http://localhost:8000/api/v1/twitter", {
-      method: "post",
-    });
-    const data = await res.json();
-    await navigate(data.url);
-  };
+   const twitterLogin = async () => {
+     const res = await fetch("/api/v1/twitter", {
+       method: "post",
+     });
+     const data = await res.json();
+     await navigate(data.url);
+   };
 
   return (
     <>
