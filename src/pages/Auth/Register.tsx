@@ -44,7 +44,7 @@ const Register = () => {
     const { email, password } = payload;
 
     try {
-      const response = await axios.post("/api/v1/signup", {
+      const response = await axios.post("http://localhost:8000/api/v1/signup", {
         email,
         password,
       });
@@ -70,7 +70,7 @@ const Register = () => {
   };
 
   const googleLogin = async () => {
-    const res = await fetch("/api/v1/google", {
+    const res = await fetch("http://localhost:8000/api/v1/google", {
       method: "post",
     });
     const data = await res.json();
@@ -78,7 +78,7 @@ const Register = () => {
   };
 
   const twitterLogin = async () => {
-    const res = await fetch("/api/v1/twitter", {
+    const res = await fetch("http://localhost:8000/api/v1/twitter", {
       method: "post",
     });
     const data = await res.json();
