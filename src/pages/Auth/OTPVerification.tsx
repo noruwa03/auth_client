@@ -56,6 +56,8 @@ const OTPVerification = () => {
   };
 
   const resendOTP = async () => {
+    setError([]);
+    setMessage("");
     setOTPResendError("");
     try {
       const response = await axios.post("/api/v1/resend-otp", {

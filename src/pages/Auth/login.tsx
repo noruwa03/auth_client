@@ -134,7 +134,9 @@ const Login = () => {
                   Welcome Back!
                 </h1>
                 {message.length > 0 && (
-                  <div className="text-sm mt-1 mb-2">{message}</div>
+                  <div className="text-sm text-red-500 mt-1 mb-2">
+                    {message}
+                  </div>
                 )}
 
                 {error.length > 0 ? (
